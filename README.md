@@ -1,22 +1,26 @@
 # Challenge Week 12 Submission Template
-
+Jake White
 # Reddit Data Challenges
 
 ## Challenge 1
 
-[Insert Screenshot]
+![image](http://i.imgur.com/dwn5aQE.png)
 
 ## Challenge 2
 
-[Explain what's interesting]
+there are over 12,000,000 data points, which I assume are individual comments, which is very interesting considering the data was collected over only two weeks
+
+![image](http://i.imgur.com/I0CLesK.png)
 
 ## Challenge 3
 
-[Explain possible Insights]
+each node has a field which indicates the subreddit it is attached to. with this information we can learn which subreddit communities are most active. for example the "leagueoflegends" community had over 310,000 posts within the two week period
+
+![image](http://i.imgur.com/PFVda0D.png)
 
 ## Challenge 4
 
-[What it would tell you about the Reddit Community]
+you could examine each comment for key words and from that you could come to a conclusion regarding the majority of the reddit commentors general tones and learn from this about the reddit community as a whole
 
 ## Challenge 5
 
@@ -25,59 +29,70 @@
 
 ## Challenge 6
 
-[What does this change about our analysis?]
+users with unpopular opinions would be outcast from the data analysis 
 
 ## Challenge 7
 
-[How would you change your conclusions?]
+users with popularly viewed comments would only be accounted for, so the conclusion is not nessisarily accurate because not all authors are being accounted for, so yes my conclusions on the data would be changed
 
 ## Challenge 8
 
-[Bias in answer]
+we are only looking at the top 50 subreddits, when there exists many other subreddits that may more closely share active commentors
+
 
 ## Challenge 9
 
-[Other Biases]
+the data we are examining is only over a two week period, so it may be bias in that one subreddit may not have been actively commenting for whatever reason over this time period and therefore the conclusions as to which groups share the most commentors is not accurate
 
 ## Challenge 10
 
-[How may you try and prove the bias]
+you can re-examine the data given a larger time period (larger than two weeks/ different two weeks), you could also expand the number of subreddits included in the domain of subreddits being tested for similarity (more than the top 50)
 
 # Yelp and Weather 
 
 ## Challenge 1
 
-[Screenshot your query and a result]
+db.precipitation.aggregate([{$match: {"date": /20100425.*/}},{$match: {"station.name": "MADISON DANE CO REGIONAL AIRPORT WI US" }},{$group:{_id: null, total: { $sum: "$hpcp"}}}]);
+
+Answer: 62
+
+![image](http://i.imgur.com/R5ZNs5Q.png)
 
 ## Challenge 2
 
-[Query snippet]
-[Answer]
+db.normal.aggregate([{$match: {"DATE": /20100425.*/}},{$match: {"STATION_NAME": "LAS VEGAS MCCARRAN INTERNATIONAL AIRPORT NV US" }},{$group:{_id: null, average_windspeed: { $avg: "$HLY-WIND-AVGSPD"}}}]);
+
+Answer: 110.08333333333333
+
+![image](http://i.imgur.com/KnVJm6u.png)
 
 ## Challenge 3
 
-[Query snippet]
-[Answer]
+db.business.aggregate([{$match : {"city": "Madison"}},{$group:{_id:null, total_reviews:{$sum:"$review_count"}}}]);
+
+Answer: 34,410
+
+![image](http://i.imgur.com/Rjo7TkI.png)
 
 ## Challenge 4
 
-[Query snippet]
-[Answer]
+db.business.aggregate([{$match : {"city": "Las Vegas"}},{$group:{_id:null, total_reviews:{$sum:"$review_count"}}}]);
+
+Answer: 577,550
+
+![image](http://i.imgur.com/XMD0SbN.png)
 
 ## Challenge 5
 
-[Query snippet]
-[Answer]
+db.business.aggregate([{$match : {"city": "Phoenix"}},{$group:{_id:null, total_reviews:{$sum:"$review_count"}}}]);
 
-## Challenge 6
+Answer: 200,089
 
-[Query snippet]
-[Answer]
+![image](http://i.imgur.com/pM19HXv.png)
 
-## Challenge 7 [BONUS]
 
-[Code]
-[Answer]
+
+
 
 
 
